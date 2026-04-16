@@ -1,10 +1,23 @@
+
 package com.example;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
 public class AppTest {
-@Test
-public void testAdd() {
-App app = new App();
-assertEquals(5, app.add(2, 3));
-}
+
+    @Test
+    void testGradeA() {
+        assertEquals("A", App.calculateGrade(95));
+    }
+
+    @Test
+    void testGradeB() {
+        assertEquals("B", App.calculateGrade(80));
+    }
+
+    @Test
+    void testGradeFail() {
+        assertEquals("F", App.calculateGrade(30));
+    }
 }
